@@ -1,6 +1,27 @@
+// Import the 'express' module
 import express from "express";
-const app=express();
 
-app.listen(3001,()=>{
-    console.log("server is running on port 3001!")
-})
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
+
+// Create an instance of the Express application
+const app = express();
+
+
+mongoose.connect("mongodb://127.0.0.1:27017/Estate")
+  .then(() => console.log('Connected to Database'))
+  .catch(err => console.log('Error connecting to database', err));
+
+
+// Define a route for the root ("/") path
+app.get("/", (req, res) => {
+    // Send the response "Hello" when a GET request is made to the root path
+    res.send("Hello");
+});
+
+// Start the server and listen on port 3001
+app.listen(3001, () => {
+    // This callback function is executed once the server is successfully started
+    console.log("Server is running on port 3001!");
+});
