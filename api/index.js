@@ -4,10 +4,13 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js";
+import authRouter from "./routes/auth.route.js";
 dotenv.config();
 
 // Create an instance of the Express application
 const app = express();
+
+app.use(express.json());
 
 // Connect to the MongoDB database server with the specified URL
 mongoose.connect("mongodb://127.0.0.1:27017/Estate")
@@ -24,6 +27,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/Estate")
 
 // Define a route for the root ("/") path
 app.use("/user",userRouter);
+app.use("/auth",authRouter);
 
 // Start the server and listen on port 3001
 app.listen(3001, () => {
