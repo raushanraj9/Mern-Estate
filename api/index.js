@@ -3,6 +3,7 @@ import express from "express";
 
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import userRouter from "./routes/user.route.js";
 dotenv.config();
 
 // Create an instance of the Express application
@@ -22,10 +23,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/Estate")
 
 
 // Define a route for the root ("/") path
-app.get("/", (req, res) => {
-    // Send the response "Hello" when a GET request is made to the root path
-    res.send("Hello");
-});
+app.use("/user",userRouter);
 
 // Start the server and listen on port 3001
 app.listen(3001, () => {
