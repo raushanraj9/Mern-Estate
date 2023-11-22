@@ -8,10 +8,17 @@ dotenv.config();
 // Create an instance of the Express application
 const app = express();
 
-
+// Connect to the MongoDB database server with the specified URL
 mongoose.connect("mongodb://127.0.0.1:27017/Estate")
-  .then(() => console.log('Connected to Database'))
-  .catch(err => console.log('Error connecting to database', err));
+  .then(() => {
+    // If the connection is successful, log a message indicating a successful connection
+    console.log('Connected to Database');
+  })
+  .catch(err => {
+    // If there is an error connecting to the database, log the error message
+    console.log('Error connecting to database', err);
+  });
+
 
 
 // Define a route for the root ("/") path
