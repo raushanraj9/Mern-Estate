@@ -5,3 +5,4 @@ Real Estate app using MERN and tailwindC
 3.Connected to databse
 4.Started creating user model
 5.Creating test API route
+6.Create signup API route
