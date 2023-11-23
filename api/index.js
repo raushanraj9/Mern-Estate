@@ -28,6 +28,17 @@ mongoose.connect("mongodb://127.0.0.1:27017/Estate")
 // Define a route for the root ("/") path
 app.use("/user",userRouter);
 app.use("/auth",authRouter);
+app.use((err,req,res,next)=>
+{
+  const statusCode=err.statusCode ||500;
+  const message=err.message || "Internal server error";
+  return res.status(statusCode).json({
+    success: false,
+    message,
+    statusCode,
+})
+
+})
 
 // Start the server and listen on port 3001
 app.listen(3001, () => {
