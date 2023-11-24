@@ -10,6 +10,8 @@ dotenv.config();
 // Create an instance of the Express application
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use(cors());
 
