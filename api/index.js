@@ -1,6 +1,6 @@
 // Import the 'express' module
 import express from "express";
-
+import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js";
@@ -11,6 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 // Connect to the MongoDB database server with the specified URL
 mongoose.connect("mongodb://127.0.0.1:27017/Estate")
