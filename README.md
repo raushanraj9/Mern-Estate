@@ -9,3 +9,4 @@ Real Estate app using MERN and tailwindC
 7.Create a middleware and function to handle errors.
 8.Complete signup page UI
 9.Complete signup page functionality
+10.create sign in API route
