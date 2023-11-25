@@ -1,6 +1,7 @@
 // Import React and required hooks/components from React Router
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import OAuth from "../components/OAuth";
 
 // Functional component for Signup
 function Signup() {
@@ -68,6 +69,7 @@ function Signup() {
                 <button disabled={loading} className="bg-slate-700 text-white rounded-lg hover:opacity-95 p-2 uppercase">
                     {loading ? "Loading..." : "Sign Up"}
                 </button>
+                <OAuth />
             </form>
             {/* Link to the sign-in page */}
             <div className="flex gap-3 my-3">
