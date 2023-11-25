@@ -12,3 +12,4 @@ Real Estate app using MERN and tailwindC
 10.create sign in API route
 11.Create sign in page functionality
 12.Add redux toolkit
+13.Add redux persist
