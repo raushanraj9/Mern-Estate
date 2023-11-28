@@ -14,8 +14,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
-app.use(cookieParser());
+
 app.use(cors());
+app.use(cookieParser());
 
 // Connect to the MongoDB database server with the specified URL
 mongoose.connect("mongodb://127.0.0.1:27017/Estate")
